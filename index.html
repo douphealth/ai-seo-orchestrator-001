@@ -9,60 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        color-scheme: dark;
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #030712;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #374151;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #4b5563;
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fade-in {
-        animation: fadeIn 0.4s ease-out forwards;
-      }
-      body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.07), transparent 35%),
-                    radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.07), transparent 40%);
-        z-index: -1;
-        pointer-events: none;
-      }
-    </style>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/",
-    "react": "https://esm.sh/react@^19.1.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.9.0",
-    "openai": "https://esm.sh/openai@^4.52.7",
-    "@anthropic-ai/sdk": "https://esm.sh/@anthropic-ai/sdk@^0.24.0",
-    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
-  }
-}
-</script>
   </head>
   <body class="bg-gray-950 text-gray-300 font-sans antialiased flex">
     <div id="root" class="w-full h-full"></div>

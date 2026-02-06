@@ -1,27 +1,33 @@
 
 import type { CrawlProgress } from "../types";
 
-// Enterprise-grade redundancy: multiple proxy providers
 const PROXY_PROVIDERS = [
     (url: string) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
     (url: string) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-    // Fallback strategy: specialized scraping proxy if available, otherwise standard
     (url: string) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(url)}`
 ];
 
-const fetchWithFailover = async (targetUrl: string, signal: AbortSignal, attempt = 0): Promise<Response> => {
+const fetchWithFailover = async (targetUrl: string, signal: AbortSignal, attempt = -1): Promise<Response> => {
+    if (attempt === -1) {
+        try {
+            const response = await fetch(targetUrl, { signal, mode: 'cors' });
+            if (response.ok) return response;
+        } catch (_) {
+            // Direct fetch failed (CORS), fall through to proxy providers
+        }
+        return fetchWithFailover(targetUrl, signal, 0);
+    }
+
     if (attempt >= PROXY_PROVIDERS.length) {
-        throw new Error(`Failed to fetch ${targetUrl} after trying all proxy providers.`);
+        throw new Error(`Failed to fetch sitemap at ${targetUrl}. All fetch methods exhausted. Please verify the URL is accessible and returns valid XML.`);
     }
 
     const proxyUrl = PROXY_PROVIDERS[attempt](targetUrl);
-    
+
     try {
         const response = await fetch(proxyUrl, { signal });
         if (!response.ok) {
-            // If 403/429/5xx, try next provider
             if (response.status === 403 || response.status === 429 || response.status >= 500) {
-                console.warn(`Proxy ${attempt} failed with ${response.status}. Switching to backup...`);
                 return fetchWithFailover(targetUrl, signal, attempt + 1);
             }
             throw new Error(`Status: ${response.status}`);
@@ -29,7 +35,6 @@ const fetchWithFailover = async (targetUrl: string, signal: AbortSignal, attempt
         return response;
     } catch (e) {
         if (signal.aborted) throw e;
-        console.warn(`Proxy connection error (Provider ${attempt}). Switching to backup...`, e);
         return fetchWithFailover(targetUrl, signal, attempt + 1);
     }
 }

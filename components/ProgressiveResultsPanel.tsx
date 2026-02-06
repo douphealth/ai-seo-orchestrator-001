@@ -1,9 +1,6 @@
 import React from 'react';
 import type { PartialResults } from '../types/pipeline';
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// ICONS
-// ═══════════════════════════════════════════════════════════════════════════════
 
 const CheckBadgeIcon = () => (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -29,9 +26,6 @@ const SparklesIcon = () => (
   </svg>
 );
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// SUB-COMPONENTS
-// ═══════════════════════════════════════════════════════════════════════════════
 
 interface StatCardProps {
   icon: React.ReactNode;
@@ -79,9 +73,6 @@ const InsightCard: React.FC<InsightCardProps> = ({ title, content, icon, colorCl
   </div>
 );
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// MAIN COMPONENT
-// ═══════════════════════════════════════════════════════════════════════════════
 
 interface ProgressiveResultsPanelProps {
   results: PartialResults;

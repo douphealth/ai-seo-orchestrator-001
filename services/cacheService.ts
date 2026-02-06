@@ -1,21 +1,10 @@
-// services/cacheService.ts
-// ═══════════════════════════════════════════════════════════════════════════════
-// ENTERPRISE CACHE SERVICE v1.0 - Intelligent Analysis Caching
-// State-of-the-Art caching layer with content-aware hashing and TTL management
-// ═══════════════════════════════════════════════════════════════════════════════
-
 import type { SitewideAnalysis, SeoAnalysisResult } from '../types';
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Configuration Constants
-// ─────────────────────────────────────────────────────────────────────────────
-const CACHE_PREFIX = 'seo-analyzer-cache-v1';
+const CACHE_PREFIX = 'orchestrator-ai-cache';
 const DEFAULT_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 const MAX_CACHE_SIZE = 50; // Maximum number of cached analyses
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Type Definitions
-// ─────────────────────────────────────────────────────────────────────────────
+
 interface CachedAnalysis {
   domain: string;
   urlsHash: string;
@@ -31,9 +20,6 @@ interface CacheMetadata {
   entries: number;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Utility Functions
-// ─────────────────────────────────────────────────────────────────────────────
 
 /**
  * Generate a simple hash from a string using FNV-1a algorithm
@@ -217,9 +203,6 @@ function enforceCacheLimit(): void {
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Public Cache Service API
-// ─────────────────────────────────────────────────────────────────────────────
 
 class CacheService {
   /**
