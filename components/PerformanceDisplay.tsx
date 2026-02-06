@@ -10,7 +10,7 @@ const categoryColors: Record<PagePerformance['recommendations'][0]['category'], 
     'Snippet': 'bg-blue-900/50 text-blue-300',
     'On-Page Content': 'bg-green-900/50 text-green-300',
     'Technical SEO': 'bg-yellow-900/50 text-yellow-300',
-    'Off-Page Strategy': 'bg-purple-900/50 text-purple-300',
+    'Off-Page Strategy': 'bg-cyan-900/50 text-cyan-300',
 };
 
 const StatCard: React.FC<{ icon: React.ReactNode; label: string; value: string; colorClass: string }> = ({ icon, label, value, colorClass }) => (
@@ -38,7 +38,7 @@ export const PerformanceDisplay: React.FC<PerformanceDisplayProps> = ({ performa
         <div className="space-y-4">
             <div className="grid grid-cols-2 gap-3">
                 <StatCard icon={<ClicksIcon />} label="Clicks" value={metrics.clicks.toLocaleString()} colorClass="text-blue-400" />
-                <StatCard icon={<ImpressionsIcon />} label="Impressions" value={metrics.impressions.toLocaleString()} colorClass="text-purple-400" />
+                <StatCard icon={<ImpressionsIcon />} label="Impressions" value={metrics.impressions.toLocaleString()} colorClass="text-cyan-400" />
                 <StatCard icon={<CtrIcon />} label="CTR" value={`${(metrics.ctr * 100).toFixed(2)}%`} colorClass="text-green-400" />
                 <StatCard icon={<PositionIcon />} label="Position" value={metrics.position.toFixed(1)} colorClass="text-yellow-400" />
             </div>

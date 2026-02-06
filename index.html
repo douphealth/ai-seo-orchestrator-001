@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <title>Orchestrator AI v12.0</title>
+    <meta name="description" content="Enterprise-grade AI-powered SEO analysis platform. Get actionable insights, competitor intelligence, and prioritized implementation roadmaps." />
+    <title>Orchestrator AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,34 +13,29 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        color-scheme: light dark;
+        color-scheme: dark;
       }
-      /* For custom scrollbar styling */
       ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #030712; /* bg-gray-950 */
+        background: #030712;
       }
       ::-webkit-scrollbar-thumb {
-        background: #374151; /* bg-gray-700 */
+        background: #374151;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #4b5563; /* bg-gray-600 */
+        background: #4b5563;
       }
-
-      /* Simple fade-in animation */
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(10px); }
         to { opacity: 1; transform: translateY(0); }
       }
       .animate-fade-in {
-        animation: fadeIn 0.5s ease-out forwards;
+        animation: fadeIn 0.4s ease-out forwards;
       }
-
-      /* Modern Animated Background */
       body::before {
         content: '';
         position: fixed;
@@ -48,24 +43,14 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.1), transparent 35%),
-                    radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.1), transparent 40%);
+        background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.07), transparent 35%),
+                    radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.07), transparent 40%);
         z-index: -1;
-        animation: background-pan 25s ease-in-out infinite;
-        will-change: background-position;
+        pointer-events: none;
       }
-
-      @keyframes background-pan {
-          0% { background-position: 0% 0%; }
-          25% { background-position: 10% 20%; }
-          50% { background-position: 0% 40%; }
-          75% { background-position: -10% 20%; }
-          100% { background-position: 0% 0%; }
-      }
-
     </style>
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script type="importmap">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script type="importmap">
 {
   "imports": {
     "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
@@ -73,11 +58,12 @@
     "react": "https://esm.sh/react@^19.1.0",
     "@google/genai": "https://esm.sh/@google/genai@^1.9.0",
     "openai": "https://esm.sh/openai@^4.52.7",
-    "@anthropic-ai/sdk": "https://esm.sh/@anthropic-ai/sdk@^0.24.0"
+    "@anthropic-ai/sdk": "https://esm.sh/@anthropic-ai/sdk@^0.24.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
   }
 }
 </script>
-</head>
+  </head>
   <body class="bg-gray-950 text-gray-300 font-sans antialiased flex">
     <div id="root" class="w-full h-full"></div>
     <script type="module" src="/index.tsx"></script>

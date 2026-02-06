@@ -134,7 +134,7 @@ const TopicClustersSection: React.FC<{ clusters: TopicCluster[] }> = ({ clusters
      <div className="space-y-6">
         {clusters.map((cluster, index) => (
             <div key={index} className="bg-gray-950/50 p-4 rounded-lg border border-gray-700">
-                <h4 className="font-semibold text-lg text-purple-300 mb-3">{cluster.clusterName}</h4>
+                <h4 className="font-semibold text-lg text-blue-300 mb-3">{cluster.clusterName}</h4>
                 <div className="space-y-4">
                     <div>
                         <p className="text-sm font-semibold text-gray-400">Pillar Page:</p>
@@ -199,7 +199,7 @@ const PriorityMatrix: React.FC<{ items: PrioritizedItem[] }> = ({ items }) => {
 
 const PriorityItem: React.FC<{ item: PrioritizedItem }> = ({ item }) => {
     const name = item.type === 'Content Gap' ? item.topic : item.type === 'Topic Cluster' ? item.clusterName : item.initiativeName;
-    const typeColor = item.type === 'Content Gap' ? 'text-teal-400' : item.type === 'Topic Cluster' ? 'text-purple-400' : 'text-orange-400';
+    const typeColor = item.type === 'Content Gap' ? 'text-teal-400' : item.type === 'Topic Cluster' ? 'text-blue-400' : 'text-orange-400';
 
     return (
         <div className="bg-gray-900/70 p-3 rounded-md border border-gray-800">
@@ -257,7 +257,7 @@ export const SitewideAuditDisplay: React.FC<SitewideAuditDisplayProps> = ({ audi
                 </AccordionItem>
                 <AccordionItem defaultOpen={false} title={
                     <div className="flex items-center gap-4">
-                        <span className="text-purple-400"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636l-1.414-1.414M19.778 19.778l-1.414-1.414M18.364 5.636l-1.414 1.414M4.222 19.778l1.414-1.414M12 12a6 6 0 110-12 6 6 0 010 12z" /></svg></span>
+                        <span className="text-blue-400"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M5.636 5.636l-1.414-1.414M19.778 19.778l-1.414-1.414M18.364 5.636l-1.414 1.414M4.222 19.778l1.414-1.414M12 12a6 6 0 110-12 6 6 0 010 12z" /></svg></span>
                         <span>Topic Cluster & Internal Linking Audit</span>
                     </div>
                 }>

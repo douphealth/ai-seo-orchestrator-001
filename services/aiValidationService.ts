@@ -58,7 +58,7 @@ export const validateApiKey = async (config: AiConfig): Promise<ValidationResult
             case 'anthropic': {
                 const client = new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
                 await client.messages.create({
-                    model: 'claude-3-haiku-20240307',
+                    model: 'claude-sonnet-4-20250514',
                     messages: [{ role: 'user', content: 'test' }],
                     max_tokens: 1
                 }, { signal: controller.signal });

@@ -208,12 +208,12 @@ const callAi = async (
         }
         case 'anthropic': {
             const client = new Anthropic({ apiKey, dangerouslyAllowBrowser: true });
-            const modelName = model || 'claude-3-5-sonnet-20240620';
+            const modelName = model || 'claude-sonnet-4-20250514';
             const response = await client.messages.create({
                 model: modelName,
                 system: systemInstruction,
                 messages: [{ role: 'user', content: userPrompt }],
-                max_tokens: 4096, // Anthropic requires max_tokens
+                max_tokens: 16384,
             });
             const textContent = response.content.reduce((acc, block) => {
                 if ('text' in block) {

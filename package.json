@@ -1,7 +1,7 @@
 {
-  "name": "orchestrator-ai-v18.0",
+  "name": "orchestrator-ai",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react-dom": "^19.1.0",
-    "react": "^19.1.0",
+    "@anthropic-ai/sdk": "^0.24.0",
     "@google/genai": "^1.9.0",
+    "@supabase/supabase-js": "^2.95.2",
     "openai": "^4.52.7",
-    "@anthropic-ai/sdk": "^0.24.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

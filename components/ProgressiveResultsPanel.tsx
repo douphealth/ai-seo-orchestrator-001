@@ -1,24 +1,5 @@
-// components/ProgressiveResultsPanel.tsx
-// ═══════════════════════════════════════════════════════════════════════════════
-// Shows partial results as they become available during analysis
-// ═══════════════════════════════════════════════════════════════════════════════
-
 import React from 'react';
-import type { SitewideAnalysis, SeoAnalysisResult, ExecutiveSummary, DailyActionPlan } from '../types';
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// TYPES
-// ═══════════════════════════════════════════════════════════════════════════════
-
-export interface PartialResults {
-  sitewideAnalysis?: SitewideAnalysis;
-  seoAnalysis?: SeoAnalysisResult;
-  executiveSummary?: ExecutiveSummary;
-  actionPlan?: DailyActionPlan[];
-  urlsDiscovered?: number;
-  urlsAnalyzed?: number;
-  competitorInsights?: string[];
-}
+import type { PartialResults } from '../types/pipeline';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // ICONS
@@ -159,7 +140,7 @@ export const ProgressiveResultsPanel: React.FC<ProgressiveResultsPanelProps> = (
             icon={<SparklesIcon />}
             label="Keyword Opportunities"
             value={results.seoAnalysis.keywords.length}
-            colorClass="text-purple-400"
+            colorClass="text-cyan-400"
           />
         )}
       </div>

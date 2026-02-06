@@ -1,14 +1,10 @@
 // components/GoogleSearchConsoleConnect.tsx
-// ═══════════════════════════════════════════════════════════════════════════════
-// ORCHESTRATOR AI v13.1 - FIXED Google Search Console OAuth
-// Enterprise-Grade OAuth with Robust Error Handling & Script Loading
-// ═══════════════════════════════════════════════════════════════════════════════
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import type { GscSite, GscTokenResponse } from '../types';
 import { fetchGscSites } from '../services/gscService';
 
-const GSC_CLIENT_ID_STORAGE_KEY = 'seo-analyzer-gsc-client-id-v13';
+const GSC_CLIENT_ID_STORAGE_KEY = 'orchestrator-ai-gsc-client-id';
 const GSC_SCOPE = 'https://www.googleapis.com/auth/webmasters.readonly';
 const GOOGLE_SCRIPT_ID = 'google-gsi-script';
 

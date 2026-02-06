@@ -14,7 +14,7 @@ const CheckIcon = () => (
     </svg>
 );
 
-const AiOverviewIcon = () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-purple-400 shrink-0"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846-.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.624L16.5 21.75l-.398-1.126a3.375 3.375 0 00-2.924-2.924l-1.126-.398 1.126-.398a3.375 3.375 0 002.924-2.924l.398-1.126.398 1.126a3.375 3.375 0 002.924 2.924l1.126.398-1.126.398a3.375 3.375 0 00-2.924 2.924z"/></svg>;
+const AiOverviewIcon = () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-teal-400 shrink-0"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846-.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.624L16.5 21.75l-.398-1.126a3.375 3.375 0 00-2.924-2.924l-1.126-.398 1.126-.398a3.375 3.375 0 002.924-2.924l.398-1.126.398 1.126a3.375 3.375 0 002.924 2.924l1.126.398-1.126.398a3.375 3.375 0 00-2.924 2.924z"/></svg>;
 const PaaIcon = () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-blue-400 shrink-0"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.44a.75.75 0 00-1.061-1.061l-2.5 2.5a.75.75 0 000 1.061l2.5 2.5a.75.75 0 001.06-1.06l-1.72-1.72h5.69a.75.75 0 000-1.5h-5.69l1.72-1.72z" clipRule="evenodd" /></svg>;
 const RelatedSearchesIcon = () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-green-400 shrink-0"><path d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" /></svg>;
 const LsiKeywordsIcon = () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-teal-400 shrink-0"><path d="M10 3a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 3zM10 8.5a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 8.5zM10 14a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 14zM4.22 5.22a.75.75 0 010 1.06l-1.06 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zM15.78 6.28a.75.75 0 00-1.06-1.06l-1.06 1.06a.75.75 0 001.06 1.06l1.06-1.06zM6.28 15.78a.75.75 0 00-1.06-1.06l-1.06 1.06a.75.75 0 101.06 1.06l1.06-1.06zM14.72 14.72a.75.75 0 011.06 0l1.06 1.06a.75.75 0 11-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06z"/></svg>;
@@ -53,14 +53,14 @@ export const SerpInsightsDisplay: React.FC<SerpInsightsDisplayProps> = ({ insigh
     : "SERP Deconstruction (from Model Knowledge)";
     
     return (
-        <div className="mt-4 bg-gray-900/50 p-6 rounded-xl border border-indigo-700/60 relative animate-fade-in shadow-2xl space-y-8">
+        <div className="mt-4 bg-gray-900/50 p-6 rounded-xl border border-gray-700/60 relative animate-fade-in shadow-2xl space-y-8">
             <div className="text-center">
                 <h3 className="text-lg font-semibold text-gray-300">{title}</h3>
-                <p className="text-indigo-300 font-mono bg-gray-800/70 px-2 py-1 rounded-md text-base mt-2 inline-block"> {targetKeyword} </p>
+                <p className="text-blue-300 font-mono bg-gray-800/70 px-2 py-1 rounded-md text-base mt-2 inline-block"> {targetKeyword} </p>
             </div>
 
             <section>
-                <div className="flex items-center gap-3 mb-3"> <div className="p-2 bg-purple-900/50 rounded-lg border border-purple-700/60"><AiOverviewIcon /></div> <h4 className="font-semibold text-lg text-gray-200">AI Overview</h4> </div>
+                <div className="flex items-center gap-3 mb-3"> <div className="p-2 bg-teal-900/50 rounded-lg border border-teal-700/60"><AiOverviewIcon /></div> <h4 className="font-semibold text-lg text-gray-200">AI Overview</h4> </div>
                 <div className="p-4 bg-gray-950/70 rounded-lg border border-gray-700/80"> {aiOverview ? <p className="text-base text-gray-300 whitespace-pre-wrap">{aiOverview}</p> : <p className="text-sm text-gray-500 italic">No AI Overview was found in the live SERP for this query.</p>} </div>
             </section>
             
